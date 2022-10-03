@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom"
 import { GetUser } from "../../utils/filter"
 import { Typography } from "../../containers/Home/style"
 import * as C from "./style"
-import api from "../../services/api"
 
 const Profile = () => {
   const [data, setData] = useState("")
