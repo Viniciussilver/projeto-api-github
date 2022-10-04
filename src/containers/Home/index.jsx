@@ -15,7 +15,7 @@ const Home = () => {
       return toast.error("Preencha algum nome !")
     }
 
-    await toast.promise(api.get(`${value}`), {
+    await toast.promise(api.get(`/${value}`), {
       pending: "Verificando...",
       success: "Sucesso",
       error: "Usúario não encontrado",

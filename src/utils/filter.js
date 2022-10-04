@@ -6,19 +6,20 @@ export const GetUser = async (e) => {
 
   if(e)
   {
-  const { data: response } = await api.get(`${userName}`)
+  const { data: response } = await api.get(`/${userName}`)
   return response
   } else {
-    const { data: response } = await api.get(`${userName}/repos`)
+    const { data: response } = await api.get(`/${userName}/repos`)
     return response
   }
   
   
 }
 
-export const FilterRepository = async (prop) => {
-    let data;
+let data;
 
+export const FilterRepository = async (prop) => {
+    
     if(!data){
         data = await GetUser(false) 
     }
