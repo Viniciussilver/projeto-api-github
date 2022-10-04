@@ -83,6 +83,7 @@ const Profile = () => {
                 >
                   {linkBlog}
                 </a>
+               
               </p>
             ) : (
               " "
