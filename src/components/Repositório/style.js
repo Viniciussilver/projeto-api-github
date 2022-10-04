@@ -42,7 +42,7 @@ export const Container = styled.div`
   }
 
   .container-item {
-    height: 100px;
+    min-height: 100px;
     width: 280px;
     display: flex;
     flex-direction: column;
