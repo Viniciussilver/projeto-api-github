@@ -9,20 +9,19 @@ const Profile = () => {
   const [data, setData] = useState("")
   const navigate = useNavigate()
 
-  let linkBlog;
+  let linkBlog
 
-  if( data.blog ) {
-    linkBlog = data.blog.length > 37 ? `${data.blog.slice(0, 35)}...` : data.blog
-
+  if (data.blog) {
+    linkBlog =
+      data.blog.length > 37 ? `${data.blog.slice(0, 35)}...` : data.blog
   }
 
   useEffect(() => {
     const getUser = async () => {
-
-      if(!localStorage.getItem("user")){
+      if (!localStorage.getItem("user")) {
         return navigate("/")
       }
-     
+
       const response = await GetUser(true)
 
       setData(response)
@@ -52,15 +51,16 @@ const Profile = () => {
           </div>
 
           <div className="container-bio">
-          {data.bio ? (
+            {data.bio ? (
               <p className="item-bio">
-               <C.IconBio /><span>{ data.bio }</span>
+                <C.IconBio />
+                <span>{data.bio}</span>
               </p>
             ) : (
               " "
             )}
             <p className="item-bio">
-              <C.IconFollowers /> Seguidores{" "}{data.followers} - Seguindo{" "}
+              <C.IconFollowers /> Seguidores {data.followers} - Seguindo{" "}
               {data.following}
             </p>
             {data.location ? (
@@ -72,16 +72,30 @@ const Profile = () => {
             )}
             {data.blog ? (
               <p className="item-bio">
-                <C.IconLink /> <a href={data.blog}>{linkBlog}</a>
+                <C.IconLink />{" "}
+                <a
+                  target="_blank"
+                  href={
+                    data.blog.includes("https://")
+                      ? data.blog
+                      : `https://${data.blog}`
+                  }
+                >
+                  {linkBlog}
+                </a>
               </p>
             ) : (
               " "
             )}
           </div>
-          <Link className="link-home" to="/">Voltar</Link>
+          <Link className="link-home" to="/">
+            Voltar
+          </Link>
         </div>
       ) : (
-        <div className="loading"><p >Carregando...</p></div>
+        <div className="loading">
+          <p>Carregando...</p>
+        </div>
       )}
     </C.Container>
   )
