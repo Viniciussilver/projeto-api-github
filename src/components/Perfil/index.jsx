@@ -72,7 +72,7 @@ const Profile = () => {
             )}
             {data.blog ? (
               <p className="item-bio">
-                <C.IconLink /> <a href={data.blog}>{linkBlog}</a>
+                <C.IconLink /> <a target="_blank" href={data.blog}>{linkBlog}</a>
               </p>
             ) : (
               " "
