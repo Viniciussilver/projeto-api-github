@@ -19,14 +19,17 @@ export const GetUser = async (e) => {
 let data;
 
 export const FilterRepository = async (prop) => {
-    
+  
     if(!data){
         data = await GetUser(false) 
     }
-  if (prop == "Todos") {
+
+    if (prop == "Todos") {
     return data
   }
 
   const filterLanguage = data.filter((res) => res.language == prop)
   return filterLanguage
 }
+
+export const ResetValue = () => data = null

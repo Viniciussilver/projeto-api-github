@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
 import { Typography } from "./style"
 import * as C from "./style"
 import api from "../../services/api"
+import { ResetValue } from "../../utils/filter"
 
 const Home = () => {
   const [value, setValue] = useState("")
@@ -27,6 +28,10 @@ const Home = () => {
       navigate("/usuario")
     }, 1100)
   }
+
+  useEffect(() => {
+    ResetValue()
+  }, [])
 
   return (
     <C.Container>
