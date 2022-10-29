@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -7,6 +7,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
+
+  .container-loading {
+    margin: 0 auto;
+    margin-top: 100px;
+  }
 
   .section-filter {
     display: flex;
@@ -41,18 +46,6 @@ export const Container = styled.div`
     flex-wrap: wrap;
   }
 
-  .container-item {
-    min-height: 100px;
-    width: 280px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 14px;
-    margin: 8px 16px;
-    background-color: black;
-    border-left: 5px solid #551255;
-  }
-
   .box-info {
     display: flex;
     align-items: center;
@@ -70,4 +63,16 @@ export const Container = styled.div`
       }
     }
   }
+`
+
+export const ContainerItem = styled.div`
+  min-height: 100px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 14px;
+  margin: 8px 16px;
+  background-color: black;
+  border-left: 4px solid ${({ borderColor }) => borderColor || '#551255'};
 `
